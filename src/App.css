@@ -1,0 +1,17 @@
+    /* font */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    * {
+      margin:0;
+      padding:0;
+    }
+
+    
+    html,body {
+      box-sizing: border-box;
+      font-family:'Euclid Circular A Semibold',sans-serif ;
+      background-position: 50%;
+      background: url('./assets/background.jpg');
+    }
+
+    

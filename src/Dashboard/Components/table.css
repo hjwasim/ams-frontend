@@ -1,0 +1,41 @@
+table {
+    width:100%;
+    border-radius: 20px;
+}
+
+.table {
+    box-shadow: 0 0 20px rgba(8,21,66,.05);
+    background-color: white;
+}
+
+tr {
+    border: 1px solid rgba(255,255,255,0.3); 
+}
+
+
+.table th {
+    padding: 1.2rem 0.8rem;
+    vertical-align: top;
+    font-weight: bold;
+
+}
+.table td{
+    padding: 1.2rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+th {
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    color:#7f7fd5;
+    text-transform: uppercase;
+  }
+  td {
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: #334D6E;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
