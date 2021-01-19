@@ -1,7 +1,7 @@
 import React from 'react';
 import './dashboard.css'
 import Sidebar from './Components/Sidebar'
-
+import "../Styles/styles.css";
 function Dashboard({page,ref}) {
 
     return (
