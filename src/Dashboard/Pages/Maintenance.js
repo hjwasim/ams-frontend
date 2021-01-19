@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Table from "../Components/Table";
 import { Modal } from "react-responsive-modal";
 
+
 export default function Maintenance() {
 
   const [isModalOpen, setModalOpen] = useState({
