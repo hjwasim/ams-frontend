@@ -19,7 +19,7 @@ const modal = function () {
             </div>
         )
     }
-    this.maintenance = function () {
+    this.maintenance = function (handleSubmit,) {
         return (
             <div className="add-modal">
                 <form className="add-form">

@@ -7,7 +7,6 @@
     min-height: 42px;
     background-color: transparent;
     letter-spacing: 0.6px;
-    font-family: "Euclid Circular A Semibold";
     font-size: 14px;
     user-select: none;
     white-space: nowrap;
@@ -16,7 +15,7 @@
     cursor: pointer;
     background: transparent;
     min-width: 120px;
-    color: #7070b9;
+    color: #7070b99f;
     border: 2px solid #7f7fd5;
     transition: box-shadow 0.2s ease-in-out 0s;
     box-shadow: 0 10px 35px rgba(0, 0, 0, .1);
@@ -30,7 +29,6 @@
     text-transform: uppercase;
     min-height: 42px;
     letter-spacing: 0.6px;
-    font-family: "Euclid Circular A Semibold";
     font-size: 14px;
     user-select: none;
     white-space: nowrap;

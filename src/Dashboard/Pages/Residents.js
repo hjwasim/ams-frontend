@@ -1,63 +1,93 @@
-import React, { useState } from 'react'
-import Table from '../Components/Table'
-import '../../Styles/styles.css'
-import { residentsData } from '../data'
+import React, { useState } from "react";
+import Table from "../Components/Table";
+import "../../Styles/styles.css";
+import { residentsData } from "../data";
+import { Modal } from "react-responsive-modal";
 
-import { Modal } from './Modal'
 function Residents() {
-    const residentsTableHead = ['Block No',
-        'Flat No',
-        'Owner Name',
-        'Owner Email',
-        'Owner  Mobile',
-        'Status',
-        'Tenant Name',
-        'Tenant Mobile',
-        'Tenant Email']
 
-    const data = function () {
+    
+  const [isModalOpen, setModalOpen] = useState({
+    open: false,
+  });
 
-        this.data = residentsData
-        this.view = function () {
-            const dataRes = residentsData.map((item, index) => <> <tr key={index}>
-                <td>{item.block}</td>
-                <td>{item.flat}</td>
-                <td>{item.ownwerName}</td>
-                <td>{item.ownerEmail}</td>
-                <td>{item.ownerMobile}</td>
-                <td>{item.status}</td>
-                <td>{item.tenantName}</td>
-                <td>{item.tenantMobile}</td>
-                <td>{item.tenantEmail}</td>
+  const onOpenModal = () => {
+    setModalOpen({ open: true });
+  };
 
+  const onCloseModal = () => {
+    setModalOpen({ open: false });
+  };
 
-            </tr>
+  const residentsTableHead = [
+    "Block No",
+    "Flat No",
+    "Owner Name",
+    "Owner Email",
+    "Owner  Mobile",
+    "Status",
+    "Tenant Name",
+    "Tenant Mobile",
+    "Tenant Email",
+  ];
 
-            </>)
-            return dataRes
-        }
-    }
+  return (
+    <>
+      <div className="heading-model">
+        <h5 className="heading">Residents</h5>
 
-
-    const Data = new data()
-      const [isAdd, SetisAdd] = useState(false)
-    return (
-        <div>
-            {isAdd && Modal.residents()}
-            <div className="heading-model">
-                <h5 className="heading">Residents</h5>
-
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <button className="filter-button">Filter</button>
-                    <button className="add-button" onClick={e => {
-                        e.preventDefault()
-                        SetisAdd(!isAdd)
-                    }}>Add</button>
-                </div>
-            </div>
-            <Table thead={residentsTableHead} data={Data} />
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <button className="filter-button">Filter</button>
+          <button className="add-button" onClick={onOpenModal}>
+            Add
+          </button>
         </div>
-    )
+        <Modal open={isModalOpen.open} onClose={onCloseModal}>
+          
+          <div className="add-modal">
+            <form className="add-form">
+              <input className="form-control" placeholder="Block No" />
+
+              <input className="form-control" placeholder="Flat" />
+
+              <input className="form-control" placeholder="Owner Name" />
+
+              <input
+                className="form-control"
+                placeholder="Owner Mobile"
+                type="number"
+              />
+
+              <input
+                className="form-control"
+                placeholder="Owner Email"
+                type="email"
+              />
+
+              <input className="form-control" placeholder="Status" />
+
+              <input className="form-control" placeholder="Tenant Name" />
+
+              <input
+                className="form-control"
+                placeholder="Tenant Mobile"
+                type="number"
+              />
+
+              <input
+                className="form-control"
+                placeholder="Tenant Email"
+                type="email"
+              />
+
+              <button class="btn btn-primary">Add</button>
+            </form>
+          </div>
+        </Modal>
+      </div>
+      <Table thead={residentsTableHead} />
+    </>
+  );
 }
 
-export default Residents
+export default Residents;

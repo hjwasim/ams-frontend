@@ -2,7 +2,7 @@ import React from 'react'
 // import { maintenanceData, inventoryData, employeeData, materialsData } from '../data'
 import "./table.css"
 
-function Table({ add ,thead,data}) {
+function Table({ add ,thead}) {
 
 
     function isAdd(item) {
@@ -28,17 +28,7 @@ function Table({ add ,thead,data}) {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        data.view()
-                    }
-                    <tr>
-                        {
-                            add && isAdd(data.data[0]).map(item => <td>                                
-                             <input className="input-table"/>
-                        </td>)
-                        }
-                    </tr>
-
+                    
                 </tbody>
             </table>
 

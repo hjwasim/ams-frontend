@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 import './dashboard.css'
-
 import Sidebar from './Components/Sidebar'
 
-function Dashboard({page}) {
+function Dashboard({page,ref}) {
 
     return (
         <div className="dashboard">

@@ -8,9 +8,6 @@
 
     
     html,body {
-      box-sizing: border-box;
-      font-family:'Euclid Circular A Semibold',sans-serif ;
-      background-position: 50%;
       background: url('./assets/background.jpg');
     }
 

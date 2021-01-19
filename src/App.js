@@ -13,7 +13,6 @@ import Home from './Dashboard/Pages/Home'
 
 
 function App() {
-
   return (
     <>
       <Switch>

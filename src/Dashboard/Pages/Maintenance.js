@@ -1,59 +1,100 @@
-import React, { useState } from 'react'
-import Table from '../Components/Table'
-import '../../Styles/styles.css'
-import {maintenanceData} from '../data'
-import {Modal} from './Modal'
+import React, { useState } from "react";
+import Table from "../Components/Table";
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
 
 export default function Maintenance() {
-    const maintenanceTableHead = ['Block No',
-    'Flat No',
-    'Sq. Ft.',
-    'Amount',
-    'Status',
-    'Payment Date',
-    'Payment Mode',
-    'Bank Details']
 
-    const data = function() {
+  const [isModalOpen, setModalOpen] = useState({
+    open: false,
+  });
 
-        this.data = maintenanceData
-         this.view = function () {
-            const dataRes = maintenanceData.map((item, index) => <> <tr key={index}>
-            <td>{item.block}</td>
-            <td>{item.flat}</td>
-            <td>{item.sqft}</td>
-            <td>{item.amount}</td>
-            <td>{item.status}</td>
-            <td>{item.paymentDate}</td>
-            <td>{item.paymentMode}</td>
-            <td>{item.bankDetails}</td>
+  const onOpenModal = () => {
+    setModalOpen({ open: true });
+  };
 
-        </tr>
-    
-            </>)
-            return dataRes
-            }       
-        }
-    
-        const Data = new data()
+  const onCloseModal = () => {
+    setModalOpen({ open: false });
+  };
 
-   
-   
-    const [isAdd, SetisAdd] = useState(false)
-    return (
-        <>
-                   {isAdd && Modal.maintenance() }
-            <div className="heading-model">
-                <h5 className="heading">Maintenance</h5>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                <button className="filter-button">Filter</button>
-                <button className="add-button" onClick={e => {
-                        e.preventDefault()
-                        SetisAdd(!isAdd)
-                    }}>Add</button>
+  const maintenanceTableHead = [
+    "Block No",
+    "Flat No",
+    "Sq. Ft.",
+    "Amount",
+    "Status",
+    "Payment Date",
+    "Payment Mode",
+    "Bank Details",
+  ];
+
+  return (
+    <>
+      <div className="heading-model">
+        <h5 className="heading">Maintenance</h5>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <button className="filter-button">Filter</button>
+          <button className="add-button" onClick={onOpenModal}>
+            Add
+          </button>
+          <Modal open={isModalOpen.open} onClose={onCloseModal}>
+            <div className="add-modal">
+              <form className="add-form">
+                <input className="form-control" placeholder="Block No" />
+
+                <input className="form-control" placeholder="Flat" />
+
+                <input
+                  className="form-control"
+                  placeholder="Sq. Ft."
+                  type="number"
+                />
+
+                <input
+                  className="form-control"
+                  placeholder="Amount"
+                  type="number"
+                />
+
+                <ul>
+                  <label>Status</label>
+                  <li>
+                    <input
+                      className="input-radio"
+                      required
+                      type="radio"
+                      name="status"
+                      value="Paid"
+                    />
+                    <label>Paid</label>
+                  </li>
+                  <li>
+                    <input
+                      className="input-radio"
+                      type="radio"
+                      name="status"
+                      value="Unpaid"
+                    />
+                    <label>Unpaid</label>
+                  </li>
+                </ul>
+
+                <div className="form-group">
+                  <label>Date of Payment</label>
+                  <input
+                    className="form-control"
+                    type="datetime-local"
+                    value="2019-08-19"
+                  ></input>
                 </div>
+
+                <button class="btn btn-primary">Add</button>
+              </form>
             </div>
-            <Table thead={maintenanceTableHead} data={Data} />
-        </>
-    )
+          </Modal>
+        </div>
+      </div>
+      <Table thead={maintenanceTableHead} />
+    </>
+  );
 }
