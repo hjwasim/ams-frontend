@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Table from "../Components/Table";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-import { useForm } from 'react-hook-form'
 
 export default function Maintenance() {
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Table from '../Components/Table'
-import { employeeData } from '../data'
 import { Modal } from "react-responsive-modal";
 
 export default function Employee() {

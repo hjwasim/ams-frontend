@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Table from "../Components/Table";
 import "../../Styles/styles.css";
-import { residentsData } from "../data";
 import { Modal } from "react-responsive-modal";
 
 function Residents() {

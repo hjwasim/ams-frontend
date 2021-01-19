@@ -5,16 +5,14 @@ import "./table.css"
 function Table({ add ,thead}) {
 
 
-    function isAdd(item) {
-        let array = []
-        for (const key in item) {
-            array.push(key)
-        }
+    // function isAdd(item) {
+    //     let array = []
+    //     for (const key in item) {
+    //         array.push(key)
+    //     }
+    //     return array
 
-
-        return array
-
-    }
+    // }
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
