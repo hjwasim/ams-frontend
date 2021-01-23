@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Table from "../Components/Table";
 import { Modal } from "react-responsive-modal";
+import { Addbutton, Filterbutton } from "../../Styles/index";
+
 
 function Residents() {
 
@@ -35,10 +37,10 @@ function Residents() {
         <h5 className="heading">Residents</h5>
 
         <div style={{ display: "flex", alignItems: "center" }}>
-          <button className="filter-button">Filter</button>
-          <button className="add-button" onClick={onOpenModal}>
+          <Filterbutton className="filter-button">Filter</Filterbutton>
+          <Addbutton className="add-button" onClick={onOpenModal}>
             Add
-          </button>
+          </Addbutton>
         </div>
         <Modal open={isModalOpen.open} onClose={onCloseModal}>
           

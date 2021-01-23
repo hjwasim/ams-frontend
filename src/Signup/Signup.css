@@ -89,12 +89,6 @@ input[type=number] {
 /* main */
 
 .main {
-  /* width: 100%;
-        padding-top: 3rem;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center; */
   width: 100%;
   height: 100vh;
   display: flex;

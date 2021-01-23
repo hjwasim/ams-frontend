@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Table from "../Components/Table";
 import { Modal } from "react-responsive-modal";
-
+import { Addbutton, Filterbutton } from "../../Styles/index";
 
 export default function Maintenance() {
 
@@ -34,10 +34,10 @@ export default function Maintenance() {
       <div className="heading-model">
         <h5 className="heading">Inventory</h5>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <button className="filter-button">Filter</button>
-          <button className="add-button" onClick={onOpenModal}>
+          <Filterbutton className="filter-button">Filter</Filterbutton>
+          <Addbutton className="add-button" onClick={onOpenModal}>
             Add
-          </button>
+          </Addbutton>
           <Modal open={isModalOpen.open} onClose={onCloseModal}>
           <div className="add-modal">
                     <form className="add-form" >

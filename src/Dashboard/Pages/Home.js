@@ -1,13 +1,14 @@
 import React from 'react'
 
-function Home() {
+function Home({user}) {
+    const {info} = user
     return (
         <>
             <div className="top-greet">
-                <h2>Orchid Springs</h2>
+                <h2>{info.apartmentName}</h2>
             </div>
             <div className="main-greet">
-                <span>Hello, Sandya Jalesh Kumar! </span>
+                <span>Hello, {info.fullName}! </span>
                 <div className="reports">
                     <span>GENERATED REPORTS</span>
                 </div>
