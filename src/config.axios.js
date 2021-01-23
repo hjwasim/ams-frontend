@@ -2,5 +2,5 @@
 import axios from 'axios'
 
 export const instance = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://gentle-reaches-45516.herokuapp.com',
 });

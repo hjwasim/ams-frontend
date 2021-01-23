@@ -40,7 +40,8 @@ function Login({ history }) {
         if(auth === true) {
         return <Redirect to="/dashboard/home" />
         }
-     else {
+
+        else {
         return (
             <div className="main">
               
