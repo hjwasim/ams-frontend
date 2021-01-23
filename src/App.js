@@ -24,12 +24,10 @@ function App() {
         <Route exact path="/" component={Signup} />
         <Route path="/login" exact component={Login} />
     
-       {isUser ? (
-       <div>
+       {isUser ? <Dashboard isUser={isUser} /> : (
+      <div>
     <h2>Please Login, Authentication Not Allowed!!!</h2>
-    </div>
-       ) : (
-     <Redirect to="/login" />  )} 
+    </div>  )} 
       </Switch>
     </>
   );
