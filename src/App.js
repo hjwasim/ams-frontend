@@ -3,7 +3,7 @@ import "./App.css";
 import Signup from "./Signup";
 import Login from "./Login";
 import Dashboard from "./Dashboard/";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route ,Redirect} from "react-router-dom";
 
 import {instance} from './config.axios'
 
@@ -24,9 +24,10 @@ function App() {
         <Route exact path="/" component={Signup} />
         <Route path="/login" exact component={Login} />
     
-       {isUser && (
+       {isUser ? (
        <Dashboard isUser={isUser} />
-       )} 
+       ) : (
+     <Redirect to="/login />  )} 
       </Switch>
     </>
   );
