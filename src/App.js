@@ -3,7 +3,7 @@ import "./App.css";
 import Signup from "./Signup";
 import Login from "./Login";
 import Dashboard from "./Dashboard/";
-import { Switch, Route ,Redirect} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import {instance} from './config.axios'
 
