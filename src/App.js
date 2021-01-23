@@ -27,7 +27,7 @@ function App() {
        {isUser ? (
        <Dashboard isUser={isUser} />
        ) : (
-     <Redirect to="/login />  )} 
+     <Redirect to="/login" />  )} 
       </Switch>
     </>
   );
